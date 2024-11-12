@@ -1,0 +1,15 @@
+div#info
+{
+    outline: 2px solid red;
+    display: inline-block;
+    width:200px;
+    height: 100px;
+    text-align: center;
+	padding-top:50px;
+}
+
+div#botones{
+	margin-left: 25%;
+	
+	display: inline-block;
+}

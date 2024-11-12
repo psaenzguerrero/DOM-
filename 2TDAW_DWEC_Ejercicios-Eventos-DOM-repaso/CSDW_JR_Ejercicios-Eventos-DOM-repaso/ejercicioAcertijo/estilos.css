@@ -1,0 +1,23 @@
+div#info
+{
+    outline: 2px solid red;
+    position: absolute;
+    left:25%;
+    top:10%;
+    width:700px;
+    height: 500px;
+    text-align: center;
+	padding-top:20px;
+  
+}
+
+
+img#explosion{
+    margin-top: 50px;
+    display:none;
+}
+
+img#bomba{
+    margin-top: 20px;
+    
+}

@@ -1,0 +1,11 @@
+div#info
+{
+    outline: 2px solid red;
+    position: absolute;
+    left:30%;
+    top:30%;
+    width:200px;
+    height: 100px;
+    text-align: center;
+	padding-top:50px;
+}

@@ -1,0 +1,26 @@
+div.texto{
+	width:200px;
+	text-align: justify;
+	padding:10px;
+	border: 2px solid red;
+	float:left;
+	margin-right: 100px;
+	font-size:10px;
+}
+
+span{
+	position: relative;
+	left:170px;
+	top:-10px;
+	font-size: 1.5em;
+	font-family: sans-serif;
+	text-align: center;
+	display: inline-block;
+	background-color: yellow;
+}
+
+span a{
+	margin-bottom: 4px;
+	text-decoration: none;
+
+}

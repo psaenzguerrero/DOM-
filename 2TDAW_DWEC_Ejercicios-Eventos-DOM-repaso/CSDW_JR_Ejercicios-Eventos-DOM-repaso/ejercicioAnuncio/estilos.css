@@ -1,0 +1,15 @@
+#publi{
+	width:60%;
+	margin-left: 20%;
+	display: none;
+	position:fixed;
+	top: 200px;
+}
+
+html{
+	height: 2000px;
+}
+
+img{
+	width:100%;
+}
