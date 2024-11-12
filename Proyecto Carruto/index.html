@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/solar/bootstrap.css">
+    <style>
+        div .carrito button {
+            background-color: transparent;
+            color: white;
+            box-shadow: none;
+            border: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container my-4 p-4 border">
+        <div class="row">
+            <div class="col-md-2">
+                LOGO
+            </div>
+            <div class="col-10 carrito text-end">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-cart" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg>
+                    <span class="badge bg-primary rounded-pill"></span>
+                </button>
+            </div>
+            <div class="row">
+                <div class="ms-auto col-6 text-center  py-4">
+                    <table class="table table-hover">
+                        <!-- <tr>
+                            <td><img src="" alt=""></td>
+                            <td>Producto</td>
+                            <td>20€</td>
+                            <td><a href="">x</a></td>
+                        </tr> -->
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL CONTAINER CARRITO -->
+
+    <!-- INICIO CONTAINER PRODUCTOS -->
+    <div class="container productos">
+        <div class="row text-center">
+            <!-- <div class="col-md-4">
+                <div class="card border-primary mb-3">
+                    <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png" alt="" class="img-fluid">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Titulo producto</h4>
+                    <p class="card-text">20€</p>
+                    <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                </div>     
+            </div> -->
+
+        </div>
+    </div>
+    <!-- FINAL DEL CONTAINER DE PRODUCTOS -->
+    <script src="./index.js"></script>
+    <script>
+        let row = document.querySelector("div.productos .row");
+        let carrito = [];
+        let tabla  = document.querySelector("table.table"); 
+        let carro = document.querySelector("div .carrito button")
+        let contador= document.querySelector("span.badge");
+        contador.textContent=0;
+        
+        document.addEventListener("DOMContentLoaded", () => {
+
+            productos.forEach(producto => {
+                row.innerHTML +=
+                    `<div class="col-md-4">
+                    <div class="card border-primary mb-3">
+                        <div class="card-header">
+                            <img src="${producto.thumbnail}" alt="" class="img-fluid">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">${producto.title}</h4>
+                            <p class="card-text">${producto.price}</p>
+                            <a href="#" class="btn btn-primary" onclick="carritoAdd(this,${producto.id})">Añadir al carrito</a>
+                        </div> 
+                    </div>
+                        
+                </div>`;
+            });
+            
+        });
+        carrito.addEventListener("click", ()=>{
+            carrito.style.display="block";
+        })
+        carrito.addEventListener("mouseleave", ()=>{
+            carrito.style.display="none";
+        })
+        //FUNCION PARA AÑADIR AL CARRITO
+        function carritoAdd(elemento, idProducto) {
+            //Almacenar padre del boton donde se ha hecho el click
+            const padre = elemento.parentElement.parentElement;
+            contador.textContent++;
+            let productoActual = {
+                id: idProducto,
+                title: padre.querySelector("h4.card-title").textContent,
+                price: padre.querySelector("p.card-text").textContent,
+                img: padre.querySelector("img").src,
+                cantidad: 1
+            };
+
+
+            let existe = carrito.some(producto => producto.id == idProducto);
+
+            if (!existe) {
+                limpiar();
+                carrito.push(productoActual);
+            } else {
+                limpiar();
+                carrito.map((producto) => {
+                    if (producto.id == idProducto) {
+                        producto.cantidad++;
+                    }
+                });
+            }
+            console.log(carrito);
+             llenarProductosCarrito();
+
+            
+            
+        };
+        function llenarProductosCarrito(){
+            carrito.forEach(producto=>{
+                tabla.innerHTML+=
+                `
+                    <tr>
+                        <td><img src="${producto.img}" width="80" alt="" ></td>
+                        <td>${producto.title}</td>
+                        <td>${producto.price}X${producto.cantidad}</td>
+                        <td><a href="#" onclick="carritoDelete(this,${producto.id})">X</a></td>
+                    </tr>
+                `;
+                
+            });
+        };
+        function limpiar(){
+            tabla.innerHTML="";
+        }
+        function carritoDelete(elemento, idProducto) {
+          let padre = elemento.parentElement.parentElement;
+          padre.remove();
+            
+          carrito.map((producto) => {
+                    if (producto.id == idProducto) {
+                        producto.remove();
+                    }
+                });
+            
+        }
+
+
+
+    
+
+    </script>
+
+</body>
+
+</html>

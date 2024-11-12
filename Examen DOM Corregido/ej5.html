@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const boton = document.createElement("button");
+        boton.textContent= "Abrir menu";
+        const modal = document.createElement("div");
+        const btnCerrar = document.createElement("button");
+        btnCerrar.textContent = "Cerrar Modal";
+        document.addEventListener("DOMContentLoaded",()=>{
+            document.body.append(boton);
+            boton.addEventListener("click", ()=> {
+                modal.append(btnCerrar);
+                document.body.append(modal);
+            })
+            btnCerrar.addEventListener("click", ()=>{
+                modal.remove();
+            })
+        })
+    </script>
+</body>
+</html>
