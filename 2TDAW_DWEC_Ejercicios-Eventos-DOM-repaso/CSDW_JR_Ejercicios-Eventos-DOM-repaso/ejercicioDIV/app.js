@@ -64,7 +64,7 @@ window.addEventListener("load",
 		// 	const info = document.getElementById('info');
 		// 	const x = e.clientX;
 		// 	const y = e.clientY;
-		  
+
 		// 	info.style.left = `${x - info.offsetWidth / 2}px`;
 		// 	info.style.top = `${y - info.offsetHeight / 2}px`;
 		//   });
@@ -103,7 +103,7 @@ window.addEventListener("load",
 		// 	const { clientWidth, clientHeight } = document.documentElement;
 		// 	const x = e.clientX;
 		// 	const y = e.clientY;
-		  
+
 		// 	if (x < 50) {
 		// 	  document.body.style.backgroundColor = 'blue';
 		// 	} else if (x > clientWidth - 50) {
@@ -111,7 +111,7 @@ window.addEventListener("load",
 		// 	} else {
 		// 	  document.body.style.backgroundColor = '';
 		// 	}
-		  
+
 		// 	if (y < 50) {
 		// 	  info.style.border = '2px solid green';
 		// 	} else if (y > clientHeight - 50) {
@@ -120,5 +120,149 @@ window.addEventListener("load",
 		// 	  info.style.border = '';
 		// 	}
 		//   });
+
+		//Ejercicio 7
+		// document.addEventListener('keydown', (e) => {
+		// 	const info = document.getElementById('info');
+		// 	const step = 2;
+
+		// 	const currentTop = parseInt(info.style.top || 0, 10);
+		// 	const currentLeft = parseInt(info.style.left || 0, 10);
+
+		// 	switch (e.key) {
+		// 	  case 'ArrowUp':
+		// 		info.style.top = `${currentTop - step}px`;
+		// 		break;
+		// 	  case 'ArrowDown':
+		// 		info.style.top = `${currentTop + step}px`;
+		// 		break;
+		// 	  case 'ArrowLeft':
+		// 		info.style.left = `${currentLeft - step}px`;
+		// 		break;
+		// 	  case 'ArrowRight':
+		// 		info.style.left = `${currentLeft + step}px`;
+		// 		break;
+		// 	}
+		//   });
+
+		//Ejercicio 8
+		//   setInterval(() => {
+		// 	const info = document.getElementById('info');
+		// 	const { clientWidth, clientHeight } = document.documentElement;
+
+		// 	const randomX = Math.floor(Math.random() * (clientWidth - info.offsetWidth));
+		// 	const randomY = Math.floor(Math.random() * (clientHeight - info.offsetHeight));
+
+		// 	info.style.left = `${randomX}px`;
+		// 	info.style.top = `${randomY}px`;
+		//   }, 2000);
+
+		//Ejercicio 11
+		// const divInfo = document.getElementById("info");
+
+		// // Variables 
+		// let x = 0; 
+		// let y = 0; 
+		// let direction = "right"; 
+		// const speed = 5; 
+
+		// // Función para mover el div
+		// function moveDiv() {
+		// 	// Tamaño 
+		// 	const windowWidth = document.documentElement.clientWidth;
+		// 	const windowHeight = document.documentElement.clientHeight;
+
+		// 	switch (direction) {
+		// 		case "right":
+		// 			x += speed;
+		// 			if (x + divInfo.offsetWidth >= windowWidth) {
+		// 				direction = "down"; 
+		// 			}
+		// 			break;
+
+		// 		case "down":
+		// 			y += speed;
+		// 			if (y + divInfo.offsetHeight >= windowHeight) {
+		// 				direction = "left"; 
+		// 			}
+		// 			break;
+
+		// 		case "left":
+		// 			x -= speed;
+		// 			if (x <= 0) {
+		// 				direction = "up"; 
+		// 			}
+		// 			break;
+
+		// 		case "up":
+		// 			y -= speed;
+		// 			if (y <= 0) {
+		// 				direction = "right"; 
+		// 			}
+		// 			break;
+		// 	}
+
+		// 	divInfo.style.left = `${x}px`;
+		// 	divInfo.style.top = `${y}px`;
+
+		// 	// ¿Continuar la animación?
+		// 	requestAnimationFrame(moveDiv);
+		// }
+
+		// moveDiv();
+
+		//Ejercicio 12
+		// document.addEventListener("DOMContentLoaded", () => {
+		// 	const divInfo = document.getElementById("info");
+		// 	const TIEMPO_LIMITE = 10000;
+		// 	let juegoTerminado = false;
+		// 	let intervaloMovimiento;
+		// 	let temporizadorJuego;
+
+		// 	function iniciarMovimientoAleatorio() {
+		// 		intervaloMovimiento = setInterval(() => {
+		// 			if (juegoTerminado) return; 
 		
+					
+		// 			const { clientWidth, clientHeight } = document.documentElement;
+		// 			const posicionX = Math.floor(Math.random() * (clientWidth - divInfo.offsetWidth));
+		// 			const posicionY = Math.floor(Math.random() * (clientHeight - divInfo.offsetHeight));
+
+		// 			divInfo.style.left = `${posicionX}px`;
+		// 			divInfo.style.top = `${posicionY}px`;
+		// 		}, 2000);
+		// 	}
+		
+	
+		// 	divInfo.addEventListener('click', () => {
+		// 		if (!juegoTerminado) {
+		// 			juegoTerminado = true;
+		// 			clearInterval(intervaloMovimiento);
+		// 			clearTimeout(temporizadorJuego); 
+		// 			alert("¡HA GANADO!");
+		// 		}
+		// 	});
+		
+		// 	// Función para iniciar el juego
+		// 	function iniciarJuego() {
+		// 		juegoTerminado = false;
+		
+				
+		// 		temporizadorJuego = setTimeout(() => {
+		// 			if (!juegoTerminado) {
+		// 				juegoTerminado = true;
+		// 				clearInterval(intervaloMovimiento); 
+		// 				alert("HA PERDIDO");
+		// 				divInfo.style.display ="none"; 
+		// 			}
+		// 		}, TIEMPO_LIMITE);
+		
+		// 		// Iniciar el movimiento aleatorio
+		// 		iniciarMovimientoAleatorio();
+		// 	}
+		
+		// 	// Iniciar el juego
+		// 	iniciarJuego();
+		// });
+
 	})
