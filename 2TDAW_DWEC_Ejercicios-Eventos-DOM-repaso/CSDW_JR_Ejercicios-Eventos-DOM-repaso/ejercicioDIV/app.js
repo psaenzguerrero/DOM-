@@ -49,7 +49,7 @@ window.addEventListener("load",
 		// //ESTO PARA EL TEXTO
 		// infoDiv.append("DIV INFO");
 
-		// document.addEventListener('mousemove', (e)=> {
+		// document.addEventListener("mousemove", (e)=> {
 		// 	const x = e.clientX;
 		// 	const y = e.clientY;
 		// 	//ESTO PARA LA POSICION
@@ -60,7 +60,7 @@ window.addEventListener("load",
 
 		// 4.2
 
-		// document.addEventListener('mousemove', (e) => {
+		// document.addEventListener("mousemove", (e) => {
 		// 	const info = document.getElementById('info');
 		// 	const x = e.clientX;
 		// 	const y = e.clientY;
@@ -71,22 +71,22 @@ window.addEventListener("load",
 
 		//Ejercicio 5
 
-		// const info = document.getElementById('info');
+		// const info = document.getElementById("info");
 		// let isMoving = false;
 
-		// info.addEventListener('mousedown', (e) => {
+		// info.addEventListener("mousedown", (e) => {
 		// if (e.button === 0) {
 		// 	isMoving = true;
 		// }
 		// });
 
-		// document.addEventListener('mouseup', (e) => {
+		// document.addEventListener("mouseup", (e) => {
 		// if (e.button === 2) {
 		// 	isMoving = false;
 		// }
 		// });
 
-		// document.addEventListener('mousemove', (e) => {
+		// document.addEventListener("mousemove", (e) => {
 		// if (isMoving) {
 		// 	const x = e.clientX - info.offsetWidth / 2;
 		// 	const y = e.clientY - info.offsetHeight / 2;
@@ -96,58 +96,59 @@ window.addEventListener("load",
 		// }
 		// });
 
-		// document.addEventListener('contextmenu', (e) => e.preventDefault());
+		// document.addEventListener("contextmenu", (e) => e.preventDefault());
 
 		//Ejercicio 6
-		// document.addEventListener('mousemove', (e) => {
+		// document.addEventListener("mousemove", (e) => {
 		// 	const { clientWidth, clientHeight } = document.documentElement;
 		// 	const x = e.clientX;
 		// 	const y = e.clientY;
 
 		// 	if (x < 50) {
-		// 	  document.body.style.backgroundColor = 'blue';
+		// 	  document.body.style.backgroundColor = "blue";
 		// 	} else if (x > clientWidth - 50) {
-		// 	  document.body.style.backgroundColor = 'red';
+		// 	  document.body.style.backgroundColor = "red";
 		// 	} else {
-		// 	  document.body.style.backgroundColor = '';
+		// 	  document.body.style.backgroundColor ="";
 		// 	}
 
 		// 	if (y < 50) {
-		// 	  info.style.border = '2px solid green';
+		// 	  info.style.border = "2px solid green";
 		// 	} else if (y > clientHeight - 50) {
-		// 	  info.style.border = '2px solid aquamarine';
+		// 	  info.style.border = "2px solid aquamarine";
 		// 	} else {
-		// 	  info.style.border = '';
+		// 	  info.style.border = "";
 		// 	}
 		//   });
 
 		//Ejercicio 7
-		// document.addEventListener('keydown', (e) => {
+		// document.addEventListener("keydown", (e) => {
 		// 	const info = document.getElementById('info');
-		// 	const step = 2;
+		// 	const paso = 2;
 
 		// 	const currentTop = parseInt(info.style.top || 0, 10);
+
 		// 	const currentLeft = parseInt(info.style.left || 0, 10);
 
 		// 	switch (e.key) {
 		// 	  case 'ArrowUp':
-		// 		info.style.top = `${currentTop - step}px`;
+		// 		info.style.top = `${currentTop - paso}px`;
 		// 		break;
 		// 	  case 'ArrowDown':
-		// 		info.style.top = `${currentTop + step}px`;
+		// 		info.style.top = `${currentTop + paso}px`;
 		// 		break;
 		// 	  case 'ArrowLeft':
-		// 		info.style.left = `${currentLeft - step}px`;
+		// 		info.style.left = `${currentLeft - paso}px`;
 		// 		break;
 		// 	  case 'ArrowRight':
-		// 		info.style.left = `${currentLeft + step}px`;
+		// 		info.style.left = `${currentLeft + paso}px`;
 		// 		break;
 		// 	}
 		//   });
 
 		//Ejercicio 8
 		//   setInterval(() => {
-		// 	const info = document.getElementById('info');
+		// 	const info = document.getElementById("info");
 		// 	const { clientWidth, clientHeight } = document.documentElement;
 
 		// 	const randomX = Math.floor(Math.random() * (clientWidth - info.offsetWidth));
@@ -234,7 +235,7 @@ window.addEventListener("load",
 		// 	}
 		
 	
-		// 	divInfo.addEventListener('click', () => {
+		// 	divInfo.addEventListener("click", () => {
 		// 		if (!juegoTerminado) {
 		// 			juegoTerminado = true;
 		// 			clearInterval(intervaloMovimiento);
